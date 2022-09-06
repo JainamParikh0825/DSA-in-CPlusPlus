@@ -1,0 +1,12 @@
+Q: What are Arrays?
+A: 
+    - Collection of Items which are stored in a contiguous 
+    memory location.
+    - It is like a container.
+    - Arrays are indexed from 0. Each element can be fetch
+    using an index.
+    - Array values should be of same data type. If an "int"
+    array is created, then all the values in it should be of
+    "int" type. 
+
+------------------------------------------------------------------
