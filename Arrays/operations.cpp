@@ -46,7 +46,6 @@ class Array{
             cout << endl;
         }
 
-        // inserting at the end of the array
         void insert(int value){
             if(!isOverflow()){
                 arr[this->length] = value;
@@ -101,6 +100,14 @@ class Array{
             cout << "Array after Sorting: ";
             sort(arr, arr + this->length);
         }
+
+        int getSize(){
+            return this->size;
+        }
+
+        int getLength(){
+            return this->length;
+        }
 };
 
 int main(){
@@ -111,14 +118,16 @@ int main(){
     Array *a1 = new Array(size);
 
     int operation = 0;
-    while(operation != 7){
+    while(operation != 9){
         cout << "\n1. Insert element at end of the Array" << endl;
         cout << "2. Insert element at any given position" << endl;
         cout << "3. Delete element at any given position" << endl;
         cout << "4. Display the Array" << endl;
         cout << "5. Search an element in the Array" << endl;
         cout << "6. Sort the Array" << endl;
-        cout << "7. Exit" << endl;
+        cout << "7. Display the size of the Array";
+        cout << "8. Display the length of the Array";
+        cout << "9. Exit" << endl;
         cout << "\nSelect an operation: ";
         cin >> operation;
 
@@ -162,6 +171,14 @@ int main(){
                 a1->traversal();
                 break;
             case 7:
+                // size of an array
+                cout << "The size of the Array is: " << a1->getSize() << endl;
+                break;
+            case 8:
+                // length of an array
+                cout << "The length of the Array is: " << a1->getLength() << endl;
+                break;
+            case 9:
                 // exit
                 break;
             default:
