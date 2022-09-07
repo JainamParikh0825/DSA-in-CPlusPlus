@@ -125,8 +125,8 @@ int main(){
         cout << "4. Display the Array" << endl;
         cout << "5. Search an element in the Array" << endl;
         cout << "6. Sort the Array" << endl;
-        cout << "7. Display the size of the Array";
-        cout << "8. Display the length of the Array";
+        cout << "7. Display the size of the Array" << endl;
+        cout << "8. Display the length of the Array" << endl;
         cout << "9. Exit" << endl;
         cout << "\nSelect an operation: ";
         cin >> operation;
