@@ -7,6 +7,35 @@ A:
     using an index.
     - Array values should be of same data type. If an "int"
     array is created, then all the values in it should be of
-    "int" type. 
+    "int" type.
 
 ------------------------------------------------------------------
+
+Q: Array and Pointers
+A:
+    - Array name itself acts as a pointer.
+    - Array name contains the base address. Address of 0th element.
+
+------------------------------------------------------------------
+
+Q: What are 2D (Two Dimensional) Arrays?
+A:
+    - There are n rows and m columns. 1D Arrays have 1 row and
+    m columns.
+    - Array of Arrays.
+    - int arr[n][m], where n is no. of rows and m is no. of columns.
+
+------------------------------------------------------------------
+
+Q: Memory Implementation in 2D Arrays
+A:
+    - There are two approaches in which the 2D Array elements get
+    stored in the memory:
+    1. Row-Major (default)
+    - Here the elements are stored in memory row-wise.
+    - To calculate address of any element given that there are m
+    no. of rows and n no. of columns
+    arr[i][j] = baseAddress + ((i * n + j) * sizeof(datatype))
+
+    2. Column-Major
+    - Here the elements are stored in memory column-wise. 
