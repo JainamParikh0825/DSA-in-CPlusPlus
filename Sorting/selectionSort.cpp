@@ -12,6 +12,14 @@ using namespace std;
     larger than the second element, then we swap.
     - By this, we will be able to bring the smallest element in the
     beginning.
+
+    Example: [4, 5, 3, 2, 1]
+    1. 1st Pass
+    4, 5, 3, 2, 1
+    4, 5, 3, 2, 1
+    3, 5, 4, 2, 1
+    2, 5, 4, 3, 1
+    1, 5, 4, 3, 2
 */
 
 int main(){
