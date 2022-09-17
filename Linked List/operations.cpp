@@ -71,25 +71,68 @@ class LinkedList{
         }
 
         void insert(int position, int data){
-            Node *n = new Node();
-            n->setData(data);
-            this->size++;
+            if(position <= this->size + 1){
+                Node *n = new Node();
+                n->setData(data);
+                this->size++;
 
-            if(head == NULL){
-                head = n;
-                return;
-            } else if(position == 1){
-                n->setNext(head);
-                head = n;
+                if(head == NULL){
+                    head = n;
+                    return;
+                } else if(position == 1){
+                    n->setNext(head);
+                    head = n;
+                    return;
+                }
+
+                Node *temp = head;
+                for (int i = 0; i < position - 2; ++i){
+                    temp = temp->getNext();
+                }
+                n->setNext(temp->getNext());
+                temp->setNext(n);
                 return;
             }
 
+            cout << "Invalid position. Please insert according to the size." << endl;
+        }
+
+        int deleteAtBeginning(){
+            if(head == NULL){
+                cout << "Cannot perform delete operation. The Linked List is empty." << endl;
+                return -1;
+            }
+
+            int deletedData = head->getData();
+            head = head->getNext();
+            this->size--;
+
+            return deletedData;
+        }
+
+        int deleteAtEnd(){
+            if(head == NULL){
+                cout << "Cannot perform delete operation. The Linked List is empty." << endl;
+                return -1;
+            }
+            int deletedData;
             Node *temp = head;
-            for (int i = 0; i < position - 2; ++i){
+            this->size--;
+
+            while(temp->getNext() != NULL){
+                if(temp->getNext()->getNext() == NULL){
+                    deletedData = temp->getNext()->getData();
+                    break;
+                }
                 temp = temp->getNext();
             }
-            n->setNext(temp->getNext());
-            temp->setNext(n);
+            temp->setNext(NULL);
+
+            return deletedData;
+        }
+
+        int deleteAtPos(int position){
+            return -1;
         }
 
         void display(){
@@ -110,11 +153,17 @@ class LinkedList{
 int main(){
     LinkedList *ll = new LinkedList();
 
+    ll->deleteAtBeginning();
+    ll->deleteAtEnd();
+
     ll->insertAtBeginning(10);
     ll->insertAtBeginning(20);
     ll->insertAtBeginning(30);
     ll->insertAtBeginning(40);
     ll->insertAtBeginning(50);
+
+    ll->deleteAtBeginning();
+    ll->deleteAtEnd();
 
     ll->insertAtEnd(5);
     ll->insertAtEnd(0);
