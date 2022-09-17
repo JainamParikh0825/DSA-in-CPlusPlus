@@ -132,7 +132,33 @@ class LinkedList{
         }
 
         int deleteAtPos(int position){
+            if(position <= this->size){
+                int deletedData;
+                if(head == NULL){
+                    cout << "Cannot perform delete operation. The Linked List is empty." << endl;
+                    return -1;
+                } else if(position == 1){
+                    deletedData = this->deleteAtBeginning();
+                    return deletedData;
+                }
+
+                this->size--;
+                Node *prevNode = head;
+                Node *nextNode = head;
+
+                for (int i = 1; i < position; ++i){
+                    prevNode = nextNode;
+                    nextNode = nextNode->getNext();
+                }
+
+                deletedData = nextNode->getData();
+                prevNode->setNext(nextNode->getNext());
+
+                return deletedData;
+            }
+
             return -1;
+            cout << "Invalid position. Please delete according to the size." << endl;
         }
 
         void display(){
@@ -176,6 +202,10 @@ int main(){
     ll->insert(7, 100);
     ll->insert(13, 2000);
     ll->insert(15, 300);
+
+    ll->deleteAtPos(1);
+    ll->deleteAtPos(3);
+    ll->deleteAtPos(5);
 
     ll->display();
     cout << "The size of the Linked List: " << ll->getSize() << endl;
