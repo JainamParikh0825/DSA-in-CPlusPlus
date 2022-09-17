@@ -74,6 +74,22 @@ class LinkedList{
             Node *n = new Node();
             n->setData(data);
             this->size++;
+
+            if(head == NULL){
+                head = n;
+                return;
+            } else if(position == 1){
+                n->setNext(head);
+                head = n;
+                return;
+            }
+
+            Node *temp = head;
+            for (int i = 0; i < position - 2; ++i){
+                temp = temp->getNext();
+            }
+            n->setNext(temp->getNext());
+            temp->setNext(n);
         }
 
         void display(){
@@ -102,6 +118,15 @@ int main(){
 
     ll->insertAtEnd(5);
     ll->insertAtEnd(0);
+
+    ll->insert(1, 3);
+    ll->insert(1, 2);
+    ll->insert(2, 12);
+    ll->insert(2, 14);
+    ll->insert(4, 120);
+    ll->insert(7, 100);
+    ll->insert(13, 2000);
+    ll->insert(15, 300);
 
     ll->display();
     cout << "The size of the Linked List: " << ll->getSize() << endl;
