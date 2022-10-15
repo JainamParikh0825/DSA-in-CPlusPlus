@@ -9,16 +9,16 @@
 
 using namespace std;
 
-void printNTo1(int n){
+void print1ToN(int n){
     if(n == 0)
         return;
 
-    printNTo1(n - 1);
+    print1ToN(n - 1);
     cout << n << " ";
 }
 
 int main(){
-    printNTo1(5);
+    print1ToN(5);
 
     cout << endl;
     return 0;
