@@ -4,7 +4,6 @@
     o/p:
 */
 
-
 #include<iostream>
 
 using namespace std;
