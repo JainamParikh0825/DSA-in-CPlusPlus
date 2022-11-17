@@ -1,7 +1,7 @@
 /*
-    Q:
-    i/p:
-    o/p:
+    Q: Left Rotate Array By one position
+    i/p: 1 2 3 4 5
+    o/p: 2 3 4 5 1
 */
 
 
